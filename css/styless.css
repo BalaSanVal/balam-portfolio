@@ -104,6 +104,7 @@ p {
 
 #habilidades {
     padding: 0rem 4rem;
+    padding-bottom: 2rem;
 }
 
 #habilidades h2{
@@ -124,10 +125,165 @@ p {
     padding: 1rem;
 }
 
+#proyectos {
+  background-color: #1e293b;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  margin: 1rem auto;
+  max-width: 900px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#proyectos h2 {
+  text-align: center;
+}
+
+#proyectos p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+.grid-proyectos .card {
+    padding: 2rem 1rem;
+}
+
+#contacto {
+  padding: 3rem 2rem;
+  background-color: #0f172a;
+  border-radius: 12px;
+  max-width: 900px;
+  text-align: center;
+}
+
+#contacto h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+#contact-form {
+  background-color: #e2e8f0;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+#contact-form p {
+  font-weight: 600;
+  color: #1e293b;
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  border: 1.8px solid #94a3b8;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  color: #0f172a;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+  outline: none;
+}
+
+#contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contact-form .btn {
+  background: linear-gradient(90deg, #38bdf8, #3b82f6);
+  color: white;
+  border: none;
+  padding: 0.9rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+#contact-form .btn:hover {
+  background: linear-gradient(90deg, #0ea5e9, #2563eb);
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  #contacto {
+    padding: 2rem 1rem;
+  }
+
+  #contact-form {
+    padding: 2rem 1.2rem;
+  }
+}
+
+
+
 
 footer {
+    background-color: #0f172a;
+    color: #e2e8f0;
     text-align: center;
-    padding: 1.5rem;
-    background: #1e293b;
+    padding: 2rem 1rem;
     margin-top: 4rem;
+    border-top: 2px solid #1e293b;
+}
+
+footer p{
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #94a3b8;
+}
+
+footer .redes {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+footer .redes {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+footer .redes a {
+    color: #38bdf8;
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+footer .redes a:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 1.5rem 0.5rem;
+    }
+
+    footer .redes {
+        gap: 1rem;
+    }
+
+    footer .redes a {
+        font-size: 1.4rem;
+    }
+    
 }
