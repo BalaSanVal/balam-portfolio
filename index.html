@@ -7,10 +7,11 @@
     <title>Portfolio | Balam Sánchez Valdivia</title>
     <link rel="stylesheet" href="css/styless.css">
     <link rel="icon" type="image/png" href="assets/portafolio.png">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
     <header>
-        <h1>Balam Sánchez Valdivia</h1>
+        <h1><a href="index.html">Balam Sánchez Valdivia</a></h1>
         <nav>
             <ul>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -21,11 +22,30 @@
     </header>
 
     <section id="hero">
-        <h2>Desarrollador Web Full Stack</h2>
-        <p>Apasionado por crear soluciones eficientes con JavaScript, React y Node.js.</p>
+        <img src="assets/FotoPerfil.JPG" alt="Foto de Balam" class="perfil">
+        <h2>¡Hola! Soy <span class="resaltado">Balam Sánchez Valdivia</span></h2>
+        <p>Desarrollador web con experiencia en React, Node.js y bases de datos SQL.</p>
         <div class="buttons">
             <a href="#contacto" class="btn">Contáctame</a>
             <a href="assets/CV_SanchezValdiviaBalam.pdf" class="btn-outline">Descargar CV</a>
+        </div>
+    </section>
+
+    <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Soy un estudiante de Ingeniería Telemática en UPIITA IPN con interés en el desarrollo full stack.</p>
+        <p>Me apasiona construir interfaces modernas y optimizar la experiencia del usuario usando React y Node.js.</p>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="skills">
+            <i class="devicon-html5-plain colored"> HTML5</i>
+            <i class="devicon-css3-plain colored"> CSS3</i>
+            <i class="devicon-javascript-plain colored">JavaScript</i>
+            <i class="devicon-react-original colored">React.js</i>
+            <i class="devicon-nodejs-plain colored">Node.js</i>
+            <i class="devicon-postgresql-plain colored">SQL</i>
         </div>
     </section>
 
