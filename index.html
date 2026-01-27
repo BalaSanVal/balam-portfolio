@@ -23,19 +23,29 @@
 
     <!-- Seccion hero -->
     <section id="hero">
-        <img src="assets/FotoPerfil.JPG" alt="Foto de Balam" class="perfil">
-        <h2>¡Hola! Soy <span class="resaltado">Balam Sánchez Valdivia</span></h2>
-        <p>Desarrollador web con experiencia en React, Node.js y bases de datos SQL.</p>
-        <div class="buttons">
-            <a href="#contacto" class="btn">Contáctame</a>
-            <a href="assets/CV_SanchezValdiviaBalam.pdf" class="btn-outline">Descargar CV</a>
+        <picture>
+            <source srcset="assets/optimized/FotoPerfil.avif" type="image/avif">
+            <source srcset="assets/optimized/FotoPerfil.webp" type="image/webp">
+            <img src="assets/FotoPerfil.JPG" alt="Foto de perfil de Balam Sánchez Valdivia" class="perfil" loading="eager" width="180" height="230">
+        </picture>
+        <h1>Desarrollador Full-Stack — Balam Sánchez Valdivia</h1>
+        <p>Desarrollador Full-Stack (React / Node)</p>
+        <p>Construyo dashboards y APIs para monitoreo de datos usando React, Node y SQL.</p>
+        <p>Ingeniería Telemática UPIITA-IPN · Proyecto terminal · Monitoreo y visualización</p>
+        <div class="cta">
+            <div class="buttons">
+                <a href="#proyectos" class="btn">Ver proyectos</a>
+                <a href="assets/CV_SanchezValdiviaBalam.pdf" target="_blank" rel="noopener noreferrer" class="btn">CV (PDF)</a>
+            </div>
+            <a href="#contacto" class="btn-outline btn-contacto">Contáctame</a>
         </div>
     </section>
 
     <!-- Seccion Sobre mi -->
     <section id="sobre-mi">
         <h2>Sobre mí</h2>
-        <p>Soy un estudiante de Ingeniería Telemática en UPIITA IPN con interés en el desarrollo full stack.</p>
+        <p>Soy un estudiante de Ingeniería Telemática en UPIITA - IPN con interés en el desarrollo full stack.</p>
+        <p>Actualmente me encuentro cursando mi ultima materia de la carrera que es terminar mi proyecto terminal para completar el proceso de titulacion</p>
         <p>Me apasiona construir interfaces modernas y optimizar la experiencia del usuario usando React y Node.js.</p>
     </section>
 
