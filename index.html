@@ -10,9 +10,16 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
-    <header>
-        <h1><a href="index.html">Balam Sánchez Valdivia</a></h1>
-        <nav>
+    <header class="site-header">
+        <h1 class="logo"><a href="index.html">Balam Sánchez Valdivia</a></h1>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="primary-nav" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav id="primary-nav" class="nav" data-open="false">
             <ul>
                 <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
@@ -104,5 +111,6 @@
             <a href="https://linkedin.com/in/balam-sanchez-valdivia-bsv" target="_blank" title="LinkedIn"><i class="devicon-linkedin-plain"></i>LinkedIn</a>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
