@@ -218,6 +218,34 @@ p {
   color: #e2e8f0;
 }
 
+#sobre-mi .about-lead,
+#sobre-mi .about-note {
+    text-align: center;
+    max-width: 70ch;
+    margin: 0 auto;
+}
+
+#sobre-mi .about-points {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem auto;
+    max-width: 70ch;
+    text-align: left;
+}
+
+#sobre-mi .about-points li {
+    padding: 0.4rem 0;
+    position: relative;
+    padding-left: 1.2rem;
+}
+
+#sobre-mi .about-points li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+}
+
 #habilidades {
     padding: 0rem 4rem;
     padding-bottom: 2rem;
