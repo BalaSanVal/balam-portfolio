@@ -130,24 +130,30 @@
     <!-- Seccion Contactos -->
     <section id="contacto">
         <h2>Contacto</h2>
+        <p class="contact-subtitle">¿Tienes una oportunidad o propuesta? Escríbeme y te respondo pronto.</p>
+
         <form action="" id="contact-form">
-            <div>
-                <p>Nombre:</p>
-                <input type="text" name="name" placeholder="Tu nombre" required>
+            <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" type="text" name="name" placeholder="Tu nombre" required>
             </div>
-            <div>
-                <p>Email</p>
-                <input type="email" name="email" placeholder="Tu correo" required>
+
+            <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="tu@correo.com" required>
             </div>
-            <div>
-                <p>Escribe el mensaje que deseas mandarme:</p>
-                <textarea name="message" placeholder="Tu mensaje" id="" required></textarea>
+
+            <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Cuéntame sobre el proyecto o el puesto…" required></textarea>
             </div>
-            <div>
-                <button type="submit" class="btn">Enviar</button>
+
+            <div class="actions">
+            <button type="submit" class="btn">Enviar</button>
             </div>
         </form>
     </section>
+
 
     <footer>
         <p>© 2025 Balam Sánchez Valdivia</p>

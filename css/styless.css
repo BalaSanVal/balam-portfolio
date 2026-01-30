@@ -383,56 +383,82 @@ p {
   background-color: #0f172a;
   border-radius: 12px;
   max-width: 900px;
+  margin: 1rem auto;
   text-align: center;
 }
 
 #contacto h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
-  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+}
+
+.contact-subtitle {
+  color: #94a3b8;
+  max-width: 65ch;
+  margin: 0 auto 2rem;
+  font-size: 1rem;
 }
 
 #contact-form {
   background-color: #e2e8f0;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 2.5rem 2rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   max-width: 700px;
   margin: 0 auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+
 }
 
-#contact-form p {
+#contact-form .field {
+  text-align: left;
+}
+
+#contact-form label {
+  display: inline-block;
   font-weight: 600;
   color: #1e293b;
-  text-align: left;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
 }
 
 #contact-form input,
 #contact-form textarea {
   width: 100%;
-  border: 1.8px solid #94a3b8;
-  border-radius: 8px;
-  padding: 0.8rem 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
   font-size: 1rem;
   color: #0f172a;
   background-color: #f8fafc;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.05s ease;
+}
+
+#contact-form input:hover,
+#contact-form textarea:hover {
+  border-color: #94a3b8;
 }
 
 #contact-form input:focus,
 #contact-form textarea:focus {
   border-color: #38bdf8;
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
   outline: none;
 }
 
 #contact-form textarea {
-  min-height: 120px;
+  min-height: 140px;
   resize: vertical;
+}
+
+#contact-form .actions {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 #contact-form .btn {
@@ -440,16 +466,24 @@ p {
   color: white;
   border: none;
   padding: 0.9rem 2.5rem;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 10px;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  align-self: center;
+  transition: transform 0.15s ease, filter 0.2s ease;
 }
 
 #contact-form .btn:hover {
-  background: linear-gradient(90deg, #0ea5e9, #2563eb);
-  transform: scale(1.03);
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+#contact-form .btn:active {
+  transform: translateY(0px);
+}
+
+#contact-form .btn:focus-visible {
+  outline: 3px solid rgba(56, 189, 248, 0.5);
+  outline-offset: 3px;
 }
 
 @media (max-width: 600px) {
@@ -461,8 +495,6 @@ p {
     padding: 2rem 1.2rem;
   }
 }
-
-
 
 
 footer {
