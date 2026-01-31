@@ -34,6 +34,11 @@ function rateLimit(ip) {
 }
 
 exports.handler = async (event) => {
+    console.log("CONTACT_FUNCTION_START", {
+        method: event.httpMethod,
+        hasBody: !!event.body,
+    });
+
     try {
         if(event.httpMethod !== "POST") {
             return { statusCode: 405, body: "Method Not Allowed"};
@@ -76,11 +81,17 @@ exports.handler = async (event) => {
 
         const RESEND_API_KEY = process.env.RESEND_API_KEY;
         const to = process.env.CONTACT_TO_EMAIL;
-        const from = process.env.CONTACT_TO_EMAIL;
+        const from = process.env.CONTACT_FROM_EMAIL;
 
         if(!RESEND_API_KEY || !to || !from) {
             return { statusCode: 500, body: "Server not configured"};
         }
+
+        console.log("ENV_CHECK", {
+            hasResendKey: !!process.env.RESEND_API_KEY,
+            hasTo: !!process.env.CONTACT_TO_EMAIL,
+            hasFrom: !!process.env.CONTACT_FROM_EMAIL,
+        });
 
         const resend = new Resend(RESEND_API_KEY);
 
@@ -119,6 +130,7 @@ exports.handler = async (event) => {
             body: JSON.stringify({ ok: true}),
         };
     } catch (e) {
+        console.error("CONTACT_FUNCTION_ERROR:", e);
         return { statusCode: 500, body: "Internal Server Error" };
     }
 };
