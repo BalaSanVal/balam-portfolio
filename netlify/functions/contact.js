@@ -15,8 +15,8 @@ function escapeHtml(str) {
 
 // Rate limit
 const RATE_WINDOW_MS = 10 * 60 * 1000; //10 min
-//const RATE_MAX = 5; // 5 envíos / 10 min por IP
-const RATE_MAX = 50; // 50 envíos / 10 min por IP
+const RATE_MAX = 5; // 5 envíos / 10 min por IP
+//const RATE_MAX = 50; // 50 envíos / 10 min por IP
 
 const RATE_CONFIG = `${RATE_WINDOW_MS}:${RATE_MAX}`;
 const ipHits = new Map();
