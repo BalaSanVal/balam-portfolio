@@ -16,13 +16,23 @@ function escapeHtml(str) {
 // Rate limit
 const RATE_WINDOW_MS = 10 * 60 * 1000; //10 min
 //const RATE_MAX = 5; // 5 envíos / 10 min por IP
-const RATE_MAX = 50; // 5 envíos / 10 min por IP
+const RATE_MAX = 50; // 50 envíos / 10 min por IP
+
+const RATE_CONFIG = `${RATE_WINDOW_MS}:${RATE_MAX}`;
 const ipHits = new Map();
 
 function rateLimit(ip) {
     const now = Date.now();
     const entry = ipHits.get(ip) || { count: 0, start: now};
 
+    //Si cambiaste RATE_MAX o RATE_WINDOW_MS, resetea el contador
+    if (entry.cfg !== RATE_CONFIG) {
+        entry.count = 0;
+        entry.start = now;
+        entry.cfg = RATE_CONFIG;
+    }
+
+    //Ventana expiró resetea
     if(now - entry.start > RATE_WINDOW_MS) {
         entry.count = 0;
         entry.start = now;
