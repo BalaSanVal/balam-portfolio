@@ -1,14 +1,14 @@
 const { Resend } = require("resend");
 
 function isValidEmail(email) {
-    return typeof email === "string" && /^[^\s@]+@[^\@s]+\.[^\s@]+$/.test(email);
+    return typeof email === "string" && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function escapeHtml(str) {
     return String(str)
         .replaceAll("&", "&amp;")
         .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt")
+        .replaceAll(">", "&gt;")
         .replaceAll('"', "&quot;")
         .replaceAll("'", "&#039;");
 }
@@ -23,7 +23,7 @@ const ipHits = new Map();
 
 function rateLimit(ip) {
     const now = Date.now();
-    const entry = ipHits.get(ip) || { count: 0, start: now};
+    const entry = ipHits.get(ip) || { count: 0, start: now, cfg: RATE_CONFIG};
 
     //Si cambiaste RATE_MAX o RATE_WINDOW_MS, resetea el contador
     if (entry.cfg !== RATE_CONFIG) {
@@ -51,7 +51,7 @@ function rateLimit(ip) {
         max: RATE_MAX,
     });
 
-    return entry.count >= RATE_MAX;
+    return entry.count <= RATE_MAX;
 }
 
 exports.handler = async (event) => {
@@ -83,7 +83,7 @@ exports.handler = async (event) => {
         const message = (data.message || "").trim();
 
         // Honeypot: si viene lleno, e bot -> respondemos ok y no enviamos
-        const honeypot = (data.conpany || "").trim();
+        const honeypot = (data.company || "").trim();
         if(honeypot) {
             return {
                 statusCode: 200,
@@ -97,7 +97,7 @@ exports.handler = async (event) => {
             return { statusCode: 400, body: "Invalid name"};
         }
         if (!isValidEmail(email) || email.length > 254) {
-            return { statusCode: 400, body: "Invalid message"};
+            return { statusCode: 400, body: "Invalid email"};
         }
         if (message.length < 10 || message.length > 2000) {
             return { statusCode: 400, body: "Invalid message"};
@@ -129,10 +129,10 @@ exports.handler = async (event) => {
             <div style="font-family: Arial, sans-serif; line-height: 1.5;">
                 <h2> Nuevo mensaje desde tu portafolio</h2>
                 <p><strong>Nombre:</strong> ${safeName}</p>
-                <p><strong>Email:</strong><br>${safeEmail}>/p>
+                <p><strong>Email:</strong><br>${safeEmail}</p>
                 <p><strong>Mensaje:</strong><br>${safeMsg}</p>
                 <hr>
-                <p style"color:#64748b;font-size:12px;">IP: ${escapeHtml(ip)}</p>
+                <p style="color:#64748b;font-size:12px;">IP: ${escapeHtml(ip)}</p>
             </div>
         `;
 
