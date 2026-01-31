@@ -49,7 +49,7 @@ exports.handler = async (event) => {
             event.headers["x-forwarded-for"]?.split(",")[0]?.trim() ||
             "unknown";
         
-        if (!tareLimit(ip)) {
+        if (!rateLimit(ip)) {
             return { statusCode: 429, body: "Too Many Requests"};
         }
 
