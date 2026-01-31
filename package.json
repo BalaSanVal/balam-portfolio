@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "optimize:images" : "node scripts/optimize-images.js"
+    "optimize:images": "node scripts/optimize-images.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/BalaSanVal/balam-portfolio#readme",
   "dependencies": {
+    "resend": "^6.9.1",
     "sharp": "^0.34.5"
   }
 }
