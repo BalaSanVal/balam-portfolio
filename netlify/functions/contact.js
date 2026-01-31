@@ -41,6 +41,8 @@ function rateLimit(ip) {
     entry.count += 1;
     ipHits.set(ip, entry);
 
+    console.log("RATE_CONFIG", RATE_CONFIG);
+
     return entry.count >= RATE_MAX;
 }
 
