@@ -133,6 +133,11 @@
         <p class="contact-subtitle">¿Tienes una oportunidad o propuesta? Escríbeme y te respondo pronto.</p>
 
         <form action="" id="contact-form">
+            <!--Honeypot-->
+            <div class="hp-field" aria-hidden="true">
+                <label for="company">Compañia</label>
+                <input type="text" id="company" name="company" autocomplete="off" tabindex="-1">
+            </div>
             <div class="field">
             <label for="name">Nombre</label>
             <input id="name" type="text" name="name" placeholder="Tu nombre" required>
@@ -147,6 +152,8 @@
             <label for="message">Mensaje</label>
             <textarea id="message" name="message" placeholder="Cuéntame sobre el proyecto o el puesto…" required></textarea>
             </div>
+
+            <p id="form-status" role="status" aria-live="polite"></p>
 
             <div class="actions">
             <button type="submit" class="btn">Enviar</button>
@@ -163,5 +170,6 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script src="js/contact.js" defer></script>
 </body>
 </html>

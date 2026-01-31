@@ -495,6 +495,23 @@ p {
   }
 }
 
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#form-status {
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+#form-status.success {color: #16a34a;}
+#form-status.error {color: #dc2626;}
+
 
 footer {
     background-color: #0f172a;
