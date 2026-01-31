@@ -42,6 +42,14 @@ function rateLimit(ip) {
     ipHits.set(ip, entry);
 
     console.log("RATE_CONFIG", RATE_CONFIG);
+    console.log("RATE_STATE", {
+        ip,
+        count: entry.count,
+        start: entry.start,
+        now,
+        windowMs: RATE_WINDOW_MS,
+        max: RATE_MAX,
+    });
 
     return entry.count >= RATE_MAX;
 }
@@ -62,7 +70,10 @@ exports.handler = async (event) => {
             event.headers["x-forwarded-for"]?.split(",")[0]?.trim() ||
             "unknown";
         
-        if (!rateLimit(ip)) {
+        const allowed = rateLimit(ip);
+        console.log("RATE_DECISION", {ip, allowed});
+
+        if (!allowed) {
             return { statusCode: 429, body: "Too Many Requests"};
         }
 
