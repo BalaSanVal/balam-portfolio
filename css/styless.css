@@ -372,9 +372,19 @@ p {
   gap: 1rem;
 }
 
-.proyecto-links .disabled {
+.proyecto-links a {
   font-size: 0.85rem;
-  opacity: 0.5;
+  text-decoration: none;
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.proyecto-links a:hover {
+    background: rgba(56, 189, 248, 0.12);
+    transform: translateY(-1px);
 }
 
 
